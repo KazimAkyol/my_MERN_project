@@ -6,9 +6,9 @@ const Public = () => {
             <header>
                 <h1>Welcome to <span className="nowrap">Akyol K. Repairs!</span></h1>
             </header>
-            <main className="public_main">
+            <main className="public__main">
                 <p>Located in Beautiful Downtown Berlin City, Akyol K. Repairs provides a trained staff ready to meet your tech repair needs.</p>
-                <address className="public_addr">
+                <address className="public__addr">
                     Akyol K. Repairs<br />
                     Staakener str. 16<br />
                     13581 Berlin DE<br />
