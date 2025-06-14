@@ -50,6 +50,6 @@ const selectNotesData = createSelector(
 // getSelectors creates these selectors and we rename them with using destructuring
 export const {
     selectAll: selectAllNotes,
-    selectById: seletNoteById,
+    selectById: selectNoteById,
     selectIds: selectNotesIds,
 } = notesAdapter.getSelectors(state => selectNotesData(state) ?? initialState)
