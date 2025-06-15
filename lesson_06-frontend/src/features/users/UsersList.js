@@ -3,7 +3,8 @@ import User from "./User"
 
 const UsersList = () => {
 
-    const { data: users,
+    const {
+        data: users,
         isLoading,
         isSuccess,
         isError,
@@ -26,9 +27,9 @@ const UsersList = () => {
             <table className="table table--users">
                 <thead>
                     <tr>
-                        <th scope="col" className="table_th user__username">Username</th>
-                        <th scope="col" className="table_th user__roles">Roles</th>
-                        <th scope="col" className="table_th user__edit">Edit</th>
+                        <th scope="col" className="table__th user__username">Username</th>
+                        <th scope="col" className="table__th user__roles">Roles</th>
+                        <th scope="col" className="table__th user__edit">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
