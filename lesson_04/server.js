@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // Routes
 app.use('/', require('./routes/root'))
 app.use('/users', require('./routes/userRoutes'))
+app.use('/notes', require('./routes/noteRoutes'))
 
 // 404 Handler - DEĞİŞTİRİLMİŞ KISIM
 app.use((req, res) => {
