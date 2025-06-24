@@ -4,7 +4,6 @@ import { usersApiSlice } from '../users/usersApiSlice'
 import { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
-
 const Prefetch = () => {
     useEffect(() => {
         console.log('subscribing');
