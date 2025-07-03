@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom"
+import {FontAweSomeIcon} from "@fortawesome/react-fontawesome"
+import {faRightFromBracket} from "@fortawesome/free-solid-svg-icons"
+import {useNavigate, Link, useLocation} from "react-router-dom"
+
+import {useSendLogoutNutation} from '../features/auth/authApiSlice'
 
 const DashHeader = () => {
     const content = (
