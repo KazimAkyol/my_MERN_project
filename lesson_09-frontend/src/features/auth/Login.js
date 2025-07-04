@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 import { useDispatch } from 'react-redux'
 import { setCredentials } from './authSlice'
-import { useLoginMutation } from './authSlice'
+import { useLoginMutation } from './authApiSlice'
 
 const Login = () => {
     const userRef = useRef()
@@ -43,9 +43,17 @@ const Login = () => {
             } else {
                 setErrMsg(err.data?.message)
             }
-            errRef.current.focus()
+            // errRef.current?.focus() ile null kontrolü yapın
+            errRef.current?.focus()
         }
     }
+
+    // errMsg değiştiğinde otomatik focus yapmak için:
+    useEffect(() => {
+        if (errMsg && errRef.current) {
+            errRef.current.focus()
+        }
+    }, [errMsg])
 
     const handleUserInput = (e) => setUsername(e.target.value)
     const handlePwdInput = (e) => setPassword(e.target.value)

@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom"
-import { FontAweSomeIcon } from "@fortawesome/react-fontawesome"
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate, Link, useLocation } from "react-router-dom"
 
-import { useSendLogoutNutation } from '../features/auth/authApiSlice'
+import { useSendLogoutMutation } from '../features/auth/authApiSlice'
 import { useEffect } from "react"
 
 const DASH_REGEX = /^\/dash(\/)?$/
@@ -20,7 +19,7 @@ const DashHeader = () => {
         isSuccess,
         isError,
         error
-    }] = useSendLogoutNutation()
+    }] = useSendLogoutMutation()
 
     useEffect(() => {
         if (isSuccess) navigate('/')
@@ -41,7 +40,7 @@ const DashHeader = () => {
             title="logout"
             onClick={sendLogout}
         >
-            <FontAweSomeIcon icon={faRightFromBracket} />
+            <FontAwesomeIcon icon={faRightFromBracket} />
         </button>
     )
 
@@ -52,7 +51,7 @@ const DashHeader = () => {
                     <h1 className="dash-header__title">AkyolKDB techNotes</h1>
                 </Link>
                 <nav className="dash-header__nav">
-                    {/* add nav buttons later */}
+                    {/* add more buttons later */}
                     {logoutButton}
                 </nav>
             </div>
