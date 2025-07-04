@@ -2,14 +2,13 @@ import { useGetUsersQuery } from "./usersApiSlice"
 import User from "./User"
 
 const UsersList = () => {
-
     const {
         data: users,
         isLoading,
         isSuccess,
         isError,
         error,
-    } = useGetUsersQuery(undefined, {
+    } = useGetUsersQuery('usersList', {
         pollingInterval: 60000, // Poll every minute
         refetchOnFocus: true,
         refetchOnMountOrArgChange: true
