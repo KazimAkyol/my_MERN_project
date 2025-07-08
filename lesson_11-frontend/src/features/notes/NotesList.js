@@ -33,7 +33,7 @@ const NotesList = () => {
         if (isManager || isAdmin) {
             filteredIds = [...ids]
         } else {
-            filterIds = ids.filter(noteId => entities[noteId].username === username)
+            filteredIds = ids.filter(noteId => entities[noteId].username === username)
         }
 
         const tableContent = ids?.length && filteredIds.map(noteId => <Note key={noteId} noteId={noteId} />)
