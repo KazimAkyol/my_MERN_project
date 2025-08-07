@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom"
-import { useSelector } from "react-redux"
-import { selectNoteById } from "./notesApiSlice"
 import { selectAllUsers } from "../users/usersApiSlice"
 import EditNoteForm from './EditNoteForm'
+import { useGetNotesQuery } from "./notesApiSlice"
+import { useGetUsersQuery } from "../users/usersApiSlice"
+import useAuth from "../../hooks/useAuth"
+import PulseLoader from "react-spinners/PulseLoader"
 
 const EditNote = () => {
     const { id } = useParams()
