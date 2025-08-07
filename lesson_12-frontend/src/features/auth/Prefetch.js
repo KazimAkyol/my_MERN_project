@@ -7,8 +7,8 @@ import { Outlet } from 'react-router-dom'
 const Prefetch = () => {
     useEffect(() => {
         console.log('subscribing');
-        const notes = store.dispatch(notesApiSlice.endpoints.getNotes.initiate())
-        const users = store.dispatch(usersApiSlice.endpoints.getUsers.initiate())
+        const notes = store.dispatch(notesApiSlice.util.prefetch('getNotes', 'notesList', { force: true }))
+        const users = store.dispatch(usersApiSlice.util.prefetch('getUsers', 'usersList', { force: true }))
 
         return () => {
             console.log('unsubscribing');
